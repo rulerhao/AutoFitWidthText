@@ -45,18 +45,21 @@ class MainActivity : ComponentActivity() {
                                     listString.add(listString[i - 1] + i.toString())
                                 }
                             }
-                            Column {
-                                val text = remember { mutableStateOf("")}
-                                val index = remember { mutableStateOf(0)}
-                                Button(
-                                    onClick = {
-                                        index.value++
-                                        if (index.value > listString.size - 1) index.value = 0
-                                        text.value = listString[index.value]
-                                    }
-                                ) {
-                                    Text(text = index.value.toString())
+                            val text = remember { mutableStateOf("")}
+                            val index = remember { mutableStateOf(0)}
+                            Button(
+                                onClick = {
+                                    index.value++
+                                    if (index.value > listString.size - 1) index.value = 0
+                                    text.value = listString[index.value]
                                 }
+                            ) {
+                                Text(text = index.value.toString())
+                            }
+                            Column(
+                                modifier = Modifier
+                                    .align(Alignment.Center)
+                            ) {
                                 AutoFitWidthText(
                                     modifier = Modifier,
                                     text = text.value
@@ -64,7 +67,6 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     }
-
                 }
             }
         }
