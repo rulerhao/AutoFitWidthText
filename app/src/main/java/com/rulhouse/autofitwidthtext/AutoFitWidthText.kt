@@ -16,7 +16,7 @@ fun AutoFitWidthText(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     modifier: Modifier,
     text: String,
-    textStyle: TextStyle = MaterialTheme.typography.body1
+    textStyle: TextStyle = MaterialTheme.typography.h1
 ) {
     var textStyleState by remember { mutableStateOf(textStyle) }
     var readyToDraw by remember { mutableStateOf(false) }

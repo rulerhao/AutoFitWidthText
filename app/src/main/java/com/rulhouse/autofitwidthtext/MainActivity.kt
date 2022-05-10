@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                         Box(
                             modifier = Modifier
                                 .align(Alignment.Center)
-                                .fillMaxSize(0.2f)
+                                .fillMaxSize(0.5f)
                         ) {
                             val listString = mutableListOf<String>()
                             for(i in 0..100) {
